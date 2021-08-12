@@ -1,6 +1,6 @@
 # mall
 
-> A Vue.js project
+> A Vue.js project for Shopping
 
 ## Build Setup
 
