@@ -34,13 +34,13 @@ export default {
 
 <style scoped>
 .bottom-bar {
-  /*position: fixed;*/
-  /*left: 0;*/
-  /*right: 0;*/
-  /*bottom: 0;*/
-  height: 49px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*height: 49px;*/
+  /*position: relative;*/
   background: #fff;
-  position: relative;
   display: flex;
   text-align: center;
   width: 100vw;

@@ -28,7 +28,7 @@ export const backTopMixin = {
   },
   methods: {
     backClick() {
-      //快速回到顶部按钮，第三个参数,500毫秒回到顶部
+      //快速回到顶部按钮，第三个参数,300毫秒回到顶部
       this.$refs.scroll.scrollTo(0, 0, 300);
     },
     listenShowBackTop(position) {
