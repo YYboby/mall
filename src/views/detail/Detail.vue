@@ -15,7 +15,7 @@
       <detail-comment-info :comment-info="commentInfo" ref="commentInfo"/>
       <goods-list :goods="recommends" ref="recommend"/>
     </scroll>
-    <detail-bottom-bar/>
+    <detail-bottom-bar @addCart="addToCart"/>
     <back-top @click.native="backClick" v-show="isShowBackTop"/>
   </div>
 </template>
@@ -101,14 +101,6 @@ export default {
         this.commentInfo = data.rate.list[0];
       }
 
-      this.$nextTick(() => {
-        this.themeTopYs = [];
-
-        this.themeTopYs.push(0);
-        this.themeTopYs.push(this.$refs.param.$el.offsetTop);
-        this.themeTopYs.push(this.$refs.commentInfo.$el.offsetTop);
-        this.themeTopYs.push(this.$refs.recommend.$el.offsetTop);
-      })
     })
 
     //请求推荐数据
@@ -150,6 +142,18 @@ export default {
       //判断BackTop是否显示
       this.listenShowBackTop(position);
     },
+    addToCart() {
+      //获取购物车需要展示的信息
+      const product = {};
+      product.image = this.topImages;
+      product.title = this.goods.title;
+      product.desc = this.goods.desc;
+      product.price = this.goods.realPrice;
+      product.iid = this.iid;
+
+      //将商品添加到购物车
+      this.$store.dispatch('addCart', product)
+    }
   },
   mounted() {
     // let newrefresh = debounce(this.$refs.scroll.refresh, 50);
@@ -179,6 +183,6 @@ export default {
 .container {
   background: #fff;
   height: calc(100% - 44px - 49px);
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 </style>

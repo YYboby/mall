@@ -26,7 +26,7 @@ export default {
   name: "DetailBottomBar",
   methods: {
     addToCart() {
-
+      this.$emit('addCart');
     }
   }
 }
@@ -34,13 +34,13 @@ export default {
 
 <style scoped>
 .bottom-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /*height: 49px;*/
+  /*position: fixed;*/
+  /*left: 0;*/
+  /*right: 0;*/
+  /*bottom: 0;*/
+  height: 49px;
   background: #fff;
-  /*position: relative;*/
+  position: relative;
   display: flex;
   text-align: center;
   width: 100vw;
@@ -79,7 +79,7 @@ export default {
 .bar-right {
   font-size: 15px;
   color: #fff;
-  line-height: 58px;
+  line-height: 49px;
 }
 
 .bar-right .cart {

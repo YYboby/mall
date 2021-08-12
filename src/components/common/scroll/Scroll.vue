@@ -38,9 +38,9 @@ export default {
       this.$emit('scroll', position);
     })
     //监听滚动底部下拉事件
-    this.scroll.on('pullingUp', () => {
-      this.$emit('pullingUp');
-    })
+    // this.scroll.on('pullingUp', () => {
+    //   this.$emit('pullingUp');
+    // })
     //监听scroll滚动到底
     if (this.pullUpLoad) {
       this.scroll.on('pullingUp', () => {
