@@ -181,8 +181,12 @@ export default {
 }
 
 .container {
-  background: #fff;
-  height: calc(100% - 44px - 49px);
+  /*background: #fff;*/
+  /*height: calc(100% - 44px - 49px);*/
+  /*overflow: hidden;*/
+  position: absolute;
+  top: 44px;
+  bottom: 49px;
   overflow: hidden;
 }
 </style>
